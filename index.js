@@ -13,6 +13,10 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
 
+app.get("/", (req, res) => {
+  res.status(400).json("Welcome !");
+});
+
 //import des routes
 const taskRoutes = require("./routes/tasks");
 app.use(taskRoutes);
